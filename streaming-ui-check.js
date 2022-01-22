@@ -38,13 +38,13 @@ var opts1 = {
 var flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦🇫" ] , [ "AI" , "🇦🇮" ] , [ "AL" , "🇦🇱" ] , [ "AM" , "🇦🇲" ] , [ "AQ" , "🇦🇶" ] , [ "AR" , "🇦🇷" ] , [ "AS" , "🇦🇸" ] , [ "AT" , "🇦🇹" ] , [ "AU" , "🇦🇺" ] , [ "AW" , "🇦🇼" ] , [ "AX" , "🇦🇽" ] , [ "AZ" , "🇦🇿" ] , ["BA", "🇧🇦"], [ "BB" , "🇧🇧" ] , [ "BD" , "🇧🇩" ] , [ "BE" , "🇧🇪" ] , [ "BF" , "🇧🇫" ] , [ "BG" , "🇧🇬" ] , [ "BH" , "🇧🇭" ] , [ "BI" , "🇧🇮" ] , [ "BJ" , "🇧🇯" ] , [ "BM" , "🇧🇲" ] , [ "BN" , "🇧🇳" ] , [ "BO" , "🇧🇴" ] , [ "BR" , "🇧🇷" ] , [ "BS" , "🇧🇸" ] , [ "BT" , "🇧🇹" ] , [ "BV" , "🇧🇻" ] , [ "BW" , "🇧🇼" ] , [ "BY" , "🇧🇾" ] , [ "BZ" , "🇧🇿" ] , [ "CA" , "🇨🇦" ] , [ "CF" , "🇨🇫" ] , [ "CH" , "🇨🇭" ] , [ "CK" , "🇨🇰" ] , [ "CL" , "🇨🇱" ] , [ "CM" , "🇨🇲" ] , [ "CN" , "🇨🇳" ] , [ "CO" , "🇨🇴" ] , [ "CP" , "🇨🇵" ] , [ "CR" , "🇨🇷" ] , [ "CU" , "🇨🇺" ] , [ "CV" , "🇨🇻" ] , [ "CW" , "🇨🇼" ] , [ "CX" , "🇨🇽" ] , [ "CY" , "🇨🇾" ] , [ "CZ" , "🇨🇿" ] , [ "DE" , "🇩🇪" ] , [ "DG" , "🇩🇬" ] , [ "DJ" , "🇩🇯" ] , [ "DK" , "🇩🇰" ] , [ "DM" , "🇩🇲" ] , [ "DO" , "🇩🇴" ] , [ "DZ" , "🇩🇿" ] , [ "EA" , "🇪🇦" ] , [ "EC" , "🇪🇨" ] , [ "EE" , "🇪🇪" ] , [ "EG" , "🇪🇬" ] , [ "EH" , "🇪🇭" ] , [ "ER" , "🇪🇷" ] , [ "ES" , "🇪🇸" ] , [ "ET" , "🇪🇹" ] , [ "EU" , "🇪🇺" ] , [ "FI" , "🇫🇮" ] , [ "FJ" , "🇫🇯" ] , [ "FK" , "🇫🇰" ] , [ "FM" , "🇫🇲" ] , [ "FO" , "🇫�" ] , [ "FR" , "🇫🇷" ] , [ "GA" , "🇬🇦" ] , [ "GB" , "🇬🇧" ] , [ "HK" , "🇭🇰" ] ,["HU","🇭🇺"], [ "ID" , "🇮🇩" ] , [ "IE" , "🇮🇪" ] , [ "IL" , "🇮🇱" ] , [ "IM" , "🇮🇲" ] , [ "IN" , "🇮🇳" ] , [ "IS" , "🇮🇸" ] , [ "IT" , "🇮🇹" ] , [ "JP" , "🇯🇵" ] , [ "KR" , "🇰🇷" ] , [ "LU" , "🇱🇺" ] , [ "MO" , "🇲🇴" ] , [ "MX" , "🇲🇽" ] , [ "MY" , "🇲🇾" ] , [ "NL" , "🇳🇱" ] , [ "PH" , "🇵🇭" ] , [ "RO" , "🇷🇴" ] , [ "RS" , "🇷🇸" ] , [ "RU" , "🇷🇺" ] , [ "RW" , "🇷🇼" ] , [ "SA" , "🇸🇦" ] , [ "SB" , "��🇧" ] , [ "SC" , "🇸🇨" ] , [ "SD" , "🇸🇩" ] , [ "SE" , "🇸🇪" ] , [ "SG" , "🇸🇬" ] , [ "TH" , "🇹🇭" ] , [ "TN" , "🇹🇳" ] , [ "TO" , "🇹🇴" ] , [ "TR" , "🇹🇷" ] , [ "TV" , "🇹🇻" ] , [ "TW" , "🇹🇼" ] , [ "UK" , "🇬🇧" ] , [ "UM" , "🇺🇲" ] , [ "US" , "🇺🇸" ] , [ "UY" , "🇺🇾" ] , [ "UZ" , "🇺🇿" ] , [ "VA" , "🇻🇦" ] , [ "VE" , "🇻🇪" ] , [ "VG" , "🇻🇬" ] , [ "VI" , "🇻🇮" ] , [ "VN" , "🇻🇳" ] , [ "ZA" , "🇿🇦"]])
 
 let result = {
-  "title": '    📺  流媒体服务查询',
-  "YouTube": '<b>YouTube: </b>检测失败，请重试� ❗️',
-  "Netflix": '<b>Netflix: </b>检测失败，请重试 ❗️',
-  "Dazn": "<b>Dazn: </b>检测失败，请重试 ❗️",
-  "Disney": "<b>Disneyᐩ: </b>检测失败，请重试 ❗️",
-  "Paramount" : "<b>Paramountᐩ: </b>检测失败，请重试 ❗️",
-  "Discovery" : "<b>Discoveryᐩ: </b>检测失败，请重试 ❗️",
+  "title": '    📺  串流媒體解鎖查詢',
+  "YouTube": '<b>YouTube: </b>檢測失敗，請重試� ❗️',
+  "Netflix": '<b>Netflix: </b>檢測失敗，請重試 ❗️',
+  "Dazn": "<b>Dazn: </b>檢測失敗，請重試 ❗️",
+  "Disney": "<b>Disneyᐩ: </b>檢測失敗，請重試 ❗️",
+  "Paramount" : "<b>Paramountᐩ: </b>檢測失敗，請重試 ❗️",
+  "Discovery" : "<b>Discoveryᐩ: </b>檢測失敗，請重試 ❗️",
   //"Google": "Google 定位: 检测失败，请重试"
 
 }
@@ -62,20 +62,20 @@ const message = {
   console.log(`testDisneyPlus: region=${region}, status=${status}`)
   if (status==STATUS_COMING) {
     //console.log(1)
-    result["Disney"] = "<b>Disneyᐩ:</b> ⚠️ 即将登陆 ➟ "+'⟦'+flags.get(region.toUpperCase())+"⟧"
+    result["Disney"] = "<b>Disneyᐩ:</b> ⚠️ 即將登陸 ➟ "+'⟦'+flags.get(region.toUpperCase())+"⟧"
   } else if (status==STATUS_AVAILABLE){
     //console.log(2)
-    result["Disney"] = "<b>Disneyᐩ:</b> 支持 ➟ "+'⟦'+flags.get(region.toUpperCase())+"⟧ 🎉"
+    result["Disney"] = "<b>Disneyᐩ:</b> 支援 ➟ "+'⟦'+flags.get(region.toUpperCase())+"⟧ 🎉"
     console.log(result["Disney"])
   } else if (status==STATUS_NOT_AVAILABLE) {
     //console.log(3)
-    result["Disney"] = "<b>Disneyᐩ:</b> 未支持 🚫 "
+    result["Disney"] = "<b>Disneyᐩ:</b> 未支援 🚫 "
   } else if (status==STATUS_TIMEOUT) {
-    result["Disney"] = "<b>Disneyᐩ:</b> 检测超时 🚦 "
+    result["Disney"] = "<b>Disneyᐩ:</b> 檢測超時 🚦 "
   }
 
   let content = "------------------------------"+"</br>"+([result["YouTube"],result["Netflix"],result["Disney"],result["Dazn"],result["Paramount"],result["Discovery"]]).join("</br></br>")
-  content = content + "</br>------------------------------</br>"+"<font color=#CD5C5C >"+"<b>节点</b> ➟ " + $environment.params+ "</font>"
+  content = content + "</br>------------------------------</br>"+"<font color=#CD5C5C >"+"<b>節點</b> ➟ " + $environment.params+ "</font>"
   content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
 //  cnt = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` +'----------------------</br></br>'+result["Disney"]+'</br></br>----------------------</br>'+$environment.params + `</p>`
 $configuration.sendMessage(message).then(resolve => {
@@ -110,7 +110,7 @@ $configuration.sendMessage(message).then(resolve => {
     if (resolve.ret) {
       let output=JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g,"").replace(/\,/g," ➟ ") : $environment.params
       let content = "--------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
-      content = content + "</br>--------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + output+ "</font>"
+      content = content + "</br>--------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>節點</b> ➟ " + output+ "</font>"
       content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
       //$notify(typeof(output),output)
       console.log(output);
@@ -123,7 +123,7 @@ $configuration.sendMessage(message).then(resolve => {
     $done();
   }); 
   
-    $done({"title":result["title"],"htmlMessage":`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+'----------------------</br></br>'+"🚥 检测异常"+'</br></br>----------------------</br>'+ output + `</p>`})
+    $done({"title":result["title"],"htmlMessage":`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+'----------------------</br></br>'+"🚥 檢測異常"+'</br></br>----------------------</br>'+ output + `</p>`})
 }
   );
 
@@ -154,7 +154,7 @@ async function testDisneyPlus() {
     
     // 不支持解锁
     if (error === 'Not Available') {
-      console.log("不支持")
+      console.log("不支援")
       return { status: STATUS_NOT_AVAILABLE }
     }
     
@@ -282,14 +282,14 @@ function testNf(filmId) {
       console.log("nf:"+response.statusCode)
       if (response.statusCode === 404) {
         
-        result["Netflix"] = "<b>Netflix: </b>支持自制剧集 ⚠️"
+        result["Netflix"] = "<b>Netflix: </b>支援自制影集 ⚠️"
         console.log("nf:"+result["Netflix"])
         resolve('Not Found')
         return 
       } else if (response.statusCode === 403) {
         
         //console.log("nfnf")
-        result["Netflix"] = "<b>Netflix: </b>未支持 🚫"
+        result["Netflix"] = "<b>Netflix: </b>未支援 🚫"
         console.log("nf:"+result["Netflix"])
         //$notify("nf:"+result["Netflix"])
         resolve('Not Available')
@@ -302,13 +302,13 @@ function testNf(filmId) {
           region = 'us'
         }
         console.log("nf:"+region)
-        result["Netflix"] = "<b>Netflix: </b>完整支持"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+        result["Netflix"] = "<b>Netflix: </b>完整支援"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
         //$notify("nf:"+result["Netflix"])
         resolve("nf:"+result["Netflix"])
         return 
       }
     }, reason => {
-      result["Netflix"] = "<b>Netflix: </b>检测超时 🚦"
+      result["Netflix"] = "<b>Netflix: </b>檢測超時 🚦"
       console.log(result["Netflix"])
       resolve("timeout")
     }
@@ -332,10 +332,10 @@ function testYTB() {
       console.log("ytb:"+response.statusCode)
       if (response.statusCode !== 200) {
         //reject('Error')
-        result["YouTube"] = "<b>YouTube Premium: </b>检测失败 ❗️"
+        result["YouTube"] = "<b>YouTube Premium: </b>檢測失敗 ❗️"
       } else if (data.indexOf('Premium is not available in your country') !== -1) {
           //resolve('Not Available')
-        result["YouTube"] = "<b>YouTube Premium: </b>未支持 🚫"
+        result["YouTube"] = "<b>YouTube Premium: </b>未支援 🚫"
       } else if (data.indexOf('Premium is not available in your country') == -1) {//console.log(data.split("countryCode")[1])
       let region = ''
       let re = new RegExp('"GL":"(.*?)"', 'gm')
@@ -348,11 +348,11 @@ function testYTB() {
         region = 'US'
       }
       //resolve(region)
-      result["YouTube"] = "<b>YouTube Premium: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+      result["YouTube"] = "<b>YouTube Premium: </b>支援 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
       console.log("ytb:"+region+ result["YouTube"])
       }
     }, reason => {
-      result["YouTube"] = "<b>YouTube Premium: </b>检测超时 🚦"
+      result["YouTube"] = "<b>YouTube Premium: </b>檢測超時 🚦"
       //resolve("timeout")
     })
 }
@@ -389,7 +389,7 @@ function testDazn() {
     //$done(data)
     if (response.statusCode !== 200) {
       //reject('Error')
-      result["Dazn"] = "<b>Dazn: </b>检测失败 ❗️"
+      result["Dazn"] = "<b>Dazn: </b>檢測失敗 ❗️"
     } else if (response.statusCode == 200) {//console.log(data.split("countryCode")[1])
       //console.log(data)
       let region = ''
@@ -397,16 +397,16 @@ function testDazn() {
       let ret = re.exec(data)
       if (ret != null && ret.length === 2) {
         region = ret[1]
-        result["Dazn"] = "<b>Dazn: </b>支持 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+        result["Dazn"] = "<b>Dazn: </b>支援 "+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
       } else {
-        result["Dazn"] = "<b>Dazn: </b>未支持 🚫"
+        result["Dazn"] = "<b>Dazn: </b>未支援 🚫"
 
       }
       //resolve(region)
             console.log("Dazn:"+region+ result["Dazn"])
     }
   }, reason => {
-    result["Dazn"] = "<b>Dazn: </b>检测超时 🚦"
+    result["Dazn"] = "<b>Dazn: </b>檢測超時 🚦"
     //resolve("timeout")
   })
 }
@@ -426,14 +426,14 @@ function testParam() {
     console.log("Paramountᐩ:"+response.statusCode)
     if (response.statusCode == 200) {
       //reject('Error')
-      result["Paramount"] = "<b>Paramountᐩ: </b>支持 🎉 "
+      result["Paramount"] = "<b>Paramountᐩ: </b>支援 🎉 "
     } else if (response.statusCode == 302) {
       //resolve('Not Available')
-      result["Paramount"] = "<b>Paramountᐩ: </b>未支持 🚫"
+      result["Paramount"] = "<b>Paramountᐩ: </b>未支援 🚫"
     } 
       console.log("Paramountᐩ:"+ result["Paramount"])
   }, reason => {
-    result["Paramount"] = "<b>Paramountᐩ: </b>检测超时 🚦"
+    result["Paramount"] = "<b>Paramountᐩ: </b>檢測超時 🚦"
     //resolve("timeout")
   })
 }
@@ -474,14 +474,14 @@ function testDiscovery() {
         let data = JSON.parse(response.body)
         let locationd = data["data"]["attributes"]["currentLocationTerritory"]
         if (locationd == "us") {
-          result["Discovery"] = "<b>Discoveryᐩ: </b>支持 🎉 "
-          console.log("支持Discoveryᐩ")
-          resolve("支持Discoveryᐩ")
+          result["Discovery"] = "<b>Discoveryᐩ: </b>支援 🎉 "
+          console.log("支援Discoveryᐩ")
+          resolve("支援Discoveryᐩ")
           return
         } else {
-          result["Discovery"] = "<b>Discoveryᐩ: </b>未支持 🚫"
-          console.log("不支持Discoveryᐩ")
-          resolve("不支持Discoveryᐩ")
+          result["Discovery"] = "<b>Discoveryᐩ: </b>未支援 🚫"
+          console.log("不支援Discoveryᐩ")
+          resolve("不支援Discoveryᐩ")
           return
         }
       }, reason => {
