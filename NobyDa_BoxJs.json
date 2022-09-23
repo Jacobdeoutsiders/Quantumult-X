@@ -406,14 +406,14 @@
       "desc": "哔哩哔哩分流策略组里的中国大陆子策略名"
     }, {
       "id": "BiliArea_HK",
-      "name": "中国香港-子策略名",
+      "name": "🇭🇰香港-子策略名",
       "val": "",
       "type": "text",
       "placeholder": "(点击以展开说明)",
       "desc": "哔哩哔哩分流策略组里的香港子策略名"
     }, {
       "id": "BiliArea_TW",
-      "name": "中国台湾-子策略名",
+      "name": "🇹🇼台湾-子策略名",
       "val": "",
       "type": "text",
       "placeholder": "(点击以展开说明)",
