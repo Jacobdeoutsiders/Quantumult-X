@@ -1,0 +1,1791 @@
+{
+	"id": "iRingo.app.sub",
+	"name": " iRingo",
+	"author": "習近平小熊維尼",
+	"description": "解鎖完整的 Apple功能和集成服務",
+	"icon": "https://github.com/Jacobdeoutsiders/Quantumult-X/blob/main/Coat_of_arms_of_Hong_Kong_(1959–1997).svg-4.png",
+	"repo": "https://www.president.gov.tw",
+	"apps": [
+		{
+			"id": "iRingo.WeatherKit",
+			"name": "🌤 天氣服務",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/NSRingo/WeatherKit/wiki\">🌤 天氣服務</a>的使用說明進行配置",
+				"填寫完成後別忘點擊此頁面底端右下角的\"保存\"。"
+			],
+			"keys": [
+				"@iRingo.WeatherKit.Settings",
+				"@iRingo.WeatherKit.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.WeatherKit.Settings.Switch",
+					"name": "總功能開關",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否啓用此APP修改"
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.NextHour.Provider",
+					"name": "[未來一小時降水強度]數據源",
+					"val": "ColorfulClouds",
+					"type": "selects",
+					"items": [
+						{
+							"key": "WeatherKit",
+							"label": "WeatherKit (不進行替換)"
+						},
+						{
+							"key": "ColorfulClouds",
+							"label": "彩雲天氣"
+						},
+						{
+							"key": "QWeather",
+							"label": "和風天氣"
+						}
+					],
+					"desc": "始終會使用選定的數據源，填補無降水監測地區的數據。"
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.AQI.Provider",
+					"name": "[空氣質量]數據源",
+					"val": "ColorfulClouds",
+					"type": "selects",
+					"items": [
+						{
+							"key": "WeatherKit",
+							"label": "WeatherKit (不進行替換)"
+						},
+						{
+							"key": "ColorfulClouds",
+							"label": "彩雲天氣"
+						},
+						{
+							"key": "QWeather",
+							"label": "和風天氣"
+						},
+						{
+							"key": "WAQI",
+							"label": "The World Air Quality Project"
+						}
+					],
+					"desc": "始終會使用選定的數據源，填補無空氣質量監測地區的數據。"
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.AQI.ReplaceProviders",
+					"name": "[空氣質量]需要替換的供應商",
+					"val": [],
+					"type": "checkboxes",
+					"desc": "選中的空氣質量數據源會被替換。",
+					"items": [
+						{
+							"key": "QWeather",
+							"label": "和風天氣"
+						},
+						{
+							"key": "BreezoMeter",
+							"label": "BreezoMeter"
+						},
+						{
+							"key": "TWC",
+							"label": "The Weather Channel"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.AQI.Local.Scale",
+					"name": "[空氣質量]本地替換算法",
+					"val": "WAQI_InstantCast",
+					"type": "selects",
+					"desc": "本地替換時使用的算法",
+					"items": [
+						{
+							"key": "NONE",
+							"label": "None (不進行替換)"
+						},
+						{
+							"key": "WAQI_InstantCast",
+							"label": "WAQI InstantCast"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.AQI.Local.ReplaceScales",
+					"name": "[空氣質量]需要修改的標準",
+					"val": [
+						"HJ6332012"
+					],
+					"type": "checkboxes",
+					"desc": "選中的空氣質量標準會被替換。請注意各國監測的污染物種類可能有所不同，轉換算法或API未必適合當地。",
+					"items": [
+						{
+							"key": "HJ6332012",
+							"label": "中國 (HJ 633—2012)"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.AQI.Local.ConvertUnits",
+					"name": "[空氣質量]轉換污染物計量單位",
+					"val": false,
+					"type": "boolean",
+					"desc": "（不推薦。不同單位互轉可能會損失精度，導致數值偏大）將污染物數據替換為轉換單位後的數據，方便對照轉換後的標準。"
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.API.ColorfulClouds.Token",
+					"name": "[API]彩雲天氣 API 令牌",
+					"val": "",
+					"type": "text",
+					"placeholder": "123456789123456789abcdefghijklmnopqrstuv",
+					"desc": "彩雲天氣 API 令牌"
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.API.QWeather.Host",
+					"name": "[API]和風天氣 API 主機",
+					"val": "devapi.qweather.com",
+					"type": "selects",
+					"desc": "和風天氣 API 使用的主機名",
+					"items": [
+						{
+							"key": "devapi.qweather.com",
+							"label": "免費訂閱 (devapi.qweather.com)"
+						},
+						{
+							"key": "api.qweather.com",
+							"label": "付費訂閱 (api.qweather.com)"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.API.QWeather.Token",
+					"name": "[API]和風天氣 API 令牌",
+					"val": "",
+					"type": "text",
+					"placeholder": "123456789123456789abcdefghijklmnopqrstuv",
+					"desc": "和風天氣 API 令牌"
+				},
+				{
+					"id": "@iRingo.WeatherKit.Settings.API.WAQI.Token",
+					"name": "[API]WAQI API 令牌",
+					"val": "",
+					"type": "text",
+					"placeholder": "123456789123456789abcdefghijklmnopqrstuv",
+					"desc": "WAQI API 令牌，填寫此字段將自動使用WAQI高級API"
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-96x96_2x.png",
+				"https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-96x96_2x.png"			]
+		},
+		{
+			"id": "iRingo.Location",
+			"name": "📍 定位服務",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/📍-定位服務\">📍 定位服務</a>的使用說明進行配置",
+				"影響功能範圍包括但不限於“地圖”、“Apple News”、“指南針”等"
+			],
+			"keys": [
+				"@iRingo.Location.Settings",
+				"@iRingo.Location.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.Location.Settings.Switch",
+					"name": "總功能開關",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否啓用此APP修改"
+				},
+				{
+					"id": "@iRingo.Location.Settings.PEP.GCC",
+					"name": "[地區檢測]地理國家或地區代碼",
+					"val": "US",
+					"type": "selects",
+					"desc": "要更改為的地區或國家，此選項影響Wi-Fi或有線網絡下國家和地區檢測的結果",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "🇺🇳自動（跟隨地區檢測結果）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️中國"
+						},
+						{
+							"key": "HK",
+							"label": "🇭🇰香港"
+						},
+						{
+							"key": "TW",
+							"label": "🇹🇼台灣"
+						},
+						{
+							"key": "SG",
+							"label": "🇸🇬新加坡"
+						},
+						{
+							"key": "US",
+							"label": "🇺🇸美國"
+						},
+						{
+							"key": "JP",
+							"label": "🇯🇵日本"
+						},
+						{
+							"key": "AU",
+							"label": "🇦🇺澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "🇬🇧英國"
+						},
+						{
+							"key": "KR",
+							"label": "🇰🇷韓國"
+						},
+						{
+							"key": "CA",
+							"label": "🇨🇦加拿大"
+						},
+						{
+							"key": "IE",
+							"label": "🇮🇪愛爾蘭"
+						}
+					]
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios15-location-arrow-status-icon.png",
+				"https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios15-location-arrow-status-icon.png"
+			]
+		},
+		{
+			"id": "iRingo.Maps",
+			"name": "🗺️ 地圖",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/🗺️-地圖\">🗺️ 地圖</a>的使用說明進行配置",
+				"影響功能範圍包括但不限於“地圖”、“Apple News”、“指南針”等"
+			],
+			"keys": [
+				"@iRingo.Maps.Settings",
+				"@iRingo.Maps.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.Maps.Settings.Switch",
+					"name": "總功能開關",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否啓用此APP修改"
+				},
+				{
+					"id": "@iRingo.Maps.Settings.GeoManifest.Dynamic.Config.CountryCode.default",
+					"name": "[動態配置]資源清單的國家或地區代碼",
+					"val": "CN",
+					"type": "selects",
+					"desc": "要更改為的地區或國家，此選項影響“地圖”整體配置內容，包括以下的地圖功能與服務",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "🇺🇳自動（跟隨用戶當前所在地區）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️中國"
+						},
+						{
+							"key": "HK",
+							"label": "🇭🇰香港"
+						},
+						{
+							"key": "TW",
+							"label": "🇹🇼台灣"
+						},
+						{
+							"key": "SG",
+							"label": "🇸🇬新加坡"
+						},
+						{
+							"key": "US",
+							"label": "🇺🇸美國"
+						},
+						{
+							"key": "JP",
+							"label": "🇯🇵日本"
+						},
+						{
+							"key": "AU",
+							"label": "🇦🇺澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "🇬🇧英國"
+						},
+						{
+							"key": "KR",
+							"label": "🇰🇷韓國"
+						},
+						{
+							"key": "CA",
+							"label": "🇨🇦加拿大"
+						},
+						{
+							"key": "IE",
+							"label": "🇮🇪愛爾蘭"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Maps.Settings.UrlInfoSet.Dispatcher",
+					"name": "[調度器]API",
+					"val": "AutoNavi",
+					"type": "selects",
+					"desc": "地點數據的API，此選項影響公共指南，興趣點(POI)與位置信息等功能",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動（隨[動態配置]版本自動選擇）"
+						},
+						{
+							"key": "AutoNavi",
+							"label": "🧭高德（🏳️:互動百科/大眾點評/攜程 | 🇺🇳:維基百科/Yelp/Booking）"
+						},
+						{
+							"key": "Apple",
+							"label": "Apple（維基百科/Yelp/Booking）"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Maps.Settings.UrlInfoSet.Directions",
+					"name": "[導航與ETA]API",
+					"val": "AutoNavi",
+					"type": "selects",
+					"desc": "導航與ETA服務的API，此選項影響導航與ETA(到達時間)等功能",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動（隨[動態配置]版本自動選擇）"
+						},
+						{
+							"key": "AutoNavi",
+							"label": "🧭高德（🏳️:高德地圖 | 🇺🇳:TomTom）"
+						},
+						{
+							"key": "Apple",
+							"label": "Apple（🏳️:🈚️ | 🇺🇳:TomTom）"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Maps.Settings.UrlInfoSet.RAP",
+					"name": "[評分和照片]API",
+					"val": "Apple",
+					"type": "selects",
+					"desc": "評分和照片服務的API，此選項影響評分和照片服務以及照片使用",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動（隨[動態配置]版本自動選擇）"
+						},
+						{
+							"key": "AutoNavi",
+							"label": "🧭高德（🏳️:🈶️但未開放 | 🇺🇳:🈚️）"
+						},
+						{
+							"key": "Apple",
+							"label": "Apple（🏳️:🈚️ | 🇺🇳:🈶️）"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Maps.Settings.UrlInfoSet.LocationShift",
+					"name": "[定位漂移]API",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "定位漂移修正服務的API，控制定位漂移和🧭指南針與📍坐標的經緯度",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動（隨[動態配置]版本自動選擇）"
+						},
+						{
+							"key": "AutoNavi",
+							"label": "🧭高德（🈚️坐標，使用🏳️GCJ-02坐標）"
+						},
+						{
+							"key": "Apple",
+							"label": "Apple（🈶️坐標，使用🇺🇳WGS-84坐標）"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Maps.Settings.TileSet.Satellite",
+					"name": "[衛星圖像]數據源",
+					"val": "HYBRID",
+					"type": "selects",
+					"desc": "‘衛星’地圖的數據源，此選項影響所列位圖、影像與模型數據",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動（隨[動態配置]版本自動選擇）"
+						},
+						{
+							"key": "HYBRID",
+							"label": "混合（🏳️:2D較新 | 🇺🇳:主要城市3D）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️中國四維（🏳️:2D較新 | 🇺🇳:🈚️）"
+						},
+						{
+							"key": "XX",
+							"label": "🇺🇳DigitalGlobe（🏳️:2D較舊 | 🇺🇳:2D+主要城市3D）"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Maps.Settings.TileSet.Flyover",
+					"name": "[飛行俯瞰]數據源",
+					"val": "XX",
+					"type": "selects",
+					"desc": "‘飛行俯瞰’服務的數據源，此選項影響飛行俯瞰全球各地的主要地標和城市功能",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動（隨[動態配置]版本自動選擇）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️Apple（🏳️:🈚️ | 🇺🇳:🈚️）"
+						},
+						{
+							"key": "XX",
+							"label": "🇺🇳Apple（🏳️:🈚️ | 🇺🇳:🈶️）"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Maps.Settings.TileSet.Munin",
+					"name": "[四處看看]數據源",
+					"val": "XX",
+					"type": "selects",
+					"desc": "‘四處看看’服務的數據源，此選項影響 360 度全景視角在某些地點四處看看功能",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動（隨[動態配置]版本自動選擇）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️Apple（🏳️:🈚️ | 🇺🇳:🈚️）"
+						},
+						{
+							"key": "XX",
+							"label": "🇺🇳Apple（🏳️:🈚️ | 🇺🇳:🈶️）"
+						}
+					]
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://www.apple.com.cn/v/maps/d/images/overview/intro_icon__dfyvjc1ohbcm_small_2x.jpg",
+				"https://www.apple.com.cn/v/maps/d/images/overview/intro_icon__dfyvjc1ohbcm_small_2x.jpg"
+			]
+		},
+		{
+			"id": "iRingo.Siri",
+			"name": "⭕ Siri",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/NSRingo/Siri/wiki/🟥-Apple智能與Siri\">🟥 Apple智能與Siri</a>的使用說明進行配置",
+				"影響功能範圍包括「Siri 請求」和「Siri 建議」等"
+			],
+			"keys": [
+				"@iRingo.Siri.Settings",
+				"@iRingo.Siri.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.Siri.Settings.Switch",
+					"name": "總功能開關",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否啓用此APP修改"
+				},
+				{
+					"id": "@iRingo.Siri.Settings.CountryCode",
+					"name": "國家或地區代碼",
+					"val": "SG",
+					"type": "selects",
+					"desc": "不同國家或地區提供的內容或有差別，此選項同時會影響分配給您不同地區的Siri服務器",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "🇺🇳自動（跟隨系統地區設置）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️中國"
+						},
+						{
+							"key": "HK",
+							"label": "🇭🇰香港"
+						},
+						{
+							"key": "TW",
+							"label": "🇹🇼台灣"
+						},
+						{
+							"key": "SG",
+							"label": "🇸🇬新加坡"
+						},
+						{
+							"key": "US",
+							"label": "🇺🇸美國"
+						},
+						{
+							"key": "JP",
+							"label": "🇯🇵日本"
+						},
+						{
+							"key": "AU",
+							"label": "🇦🇺澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "🇬🇧英國"
+						},
+						{
+							"key": "KR",
+							"label": "🇰🇷韓國"
+						},
+						{
+							"key": "CA",
+							"label": "🇨🇦加拿大"
+						},
+						{
+							"key": "IE",
+							"label": "🇮🇪愛爾蘭"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.Siri.Settings.Region",
+					"name": "Siri 區域",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "忽略系統中“Siri”的“語言”設置，強制採用這裡的設置。",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "🇺🇳自動 (跟隨“Siri”的“語言”設置)"
+						},
+						{
+							"key": "zh_CN",
+							"label": "🏳️中文 (普通話 - 中國)"
+						},
+						{
+							"key": "zh_TW",
+							"label": "🇹🇼中文 (國語 - 台灣)"
+						},
+						{
+							"key": "yue_CN",
+							"label": "🏳️中文 (粵語 - 中國)"
+						},
+						{
+							"key": "zh_HK",
+							"label": "🇭🇰中文 (粵語 - 香港)"
+						},
+						{
+							"key": "ja_JP",
+							"label": "🇯🇵日語"
+						},
+						{
+							"key": "en_CA",
+							"label": "🇨🇦英語 (加拿大)"
+						},
+						{
+							"key": "en_SG",
+							"label": "🇸🇬英語 (新加坡)"
+						},
+						{
+							"key": "en_AU",
+							"label": "🇦🇺英語 (澳大利亞)"
+						},
+						{
+							"key": "IE",
+							"label": "🇮🇪英語 (愛爾蘭)"
+						},
+						{
+							"key": "en_US",
+							"label": "🇺🇸英語 (美國)"
+						},
+						{
+							"key": "en_GB",
+							"label": "🇬🇧英語 (英國)"
+						},
+						{
+							"key": "ko_KR",
+							"label": "🇰🇷韓語"
+						}
+					]
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://upload.wikimedia.org/wikipedia/commons/d/de/Logo_Apple_Siri_iOS_2024.svg",
+				"https://upload.wikimedia.org/wikipedia/commons/d/de/Logo_Apple_Siri_iOS_2024.svg"
+			]
+		},
+		{
+			"id": "iRingo.TV",
+			"name": "📺 TV",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/📺-TV\">📺 TV</a>的使用說明進行配置",
+				"自定義TV app的配置文件及各個欄目"
+			],
+			"keys": [
+				"@iRingo.TV.Settings",
+				"@iRingo.TV.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.TV.Settings.Switch",
+					"name": "總功能開關",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否啓用此APP修改"
+				},
+				{
+					"id": "@iRingo.TV.Settings.Third-Party",
+					"name": "強制啓用第三方影片庫集成",
+					"val": false,
+					"type": "boolean",
+					"desc": "是否將桌面版/macOS版/app版等平台的TV app轉換至iPad版，以啓用第三方影片庫集成(如: Disney+,Prime Video等)"
+				},
+				{
+					"id": "@iRingo.TV.Settings.HLSUrl",
+					"name": "強制修改播放服務器地址",
+					"val": "play-edge.itunes.apple.com",
+					"type": "selects",
+					"desc": "因為密鑰服務域名禁止MitM，修改密鑰服務器地址可以分離HLS與Key的MitM域名，從而恢復如對DualSubs的雙語字幕支持",
+					"items": [
+						{
+							"key": "",
+							"label": "OFF(不修改)"
+						},
+						{
+							"key": "play.itunes.apple.com",
+							"label": "play.itunes.apple.com (不推薦，與播放服務域名重疊)"
+						},
+						{
+							"key": "play-edge.itunes.apple.com",
+							"label": "play-edge.itunes.apple.com (默認)"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.ServerUrl",
+					"name": "強制修改密鑰服務器地址",
+					"val": "play.itunes.apple.com",
+					"type": "selects",
+					"desc": "因為密鑰服務域名禁止MitM，修改密鑰服務器地址可以分離HLS與Key的MitM域名，從而恢復如對DualSubs的雙語字幕支持",
+					"items": [
+						{
+							"key": "",
+							"label": "OFF(不修改)"
+						},
+						{
+							"key": "play.itunes.apple.com",
+							"label": "play.itunes.apple.com (默認)"
+						},
+						{
+							"key": "play-edge.itunes.apple.com",
+							"label": "play-edge.itunes.apple.com (不推薦，與播放服務域名重疊)"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.Tabs",
+					"name": "啓用的標籤與欄目",
+					"val": [
+						"WatchNow",
+						"Originals",
+						"MLS",
+						"Sports",
+						"Kids",
+						"Store",
+						"Movies",
+						"TV",
+						"Library",
+						"Search"
+					],
+					"type": "checkboxes",
+					"desc": "啓用的標籤與欄目，未選擇的標籤與欄目入口將被隱藏，啓用的入口由國家和地區決定，此選項僅代表功能入口上的開啓，不代表對應地區一定有數據和服務",
+					"items": [
+						{
+							"key": "WatchNow",
+							"label": "主頁(立即觀看)"
+						},
+						{
+							"key": "Originals",
+							"label": "Apple TV+/TV+(原創內容)"
+						},
+						{
+							"key": "MLS",
+							"label": "MLS Season Pass(舊版不支持)"
+						},
+						{
+							"key": "Sports",
+							"label": "體育節目(舊版為主頁的二級菜單)"
+						},
+						{
+							"key": "Kids",
+							"label": "兒童(舊版為主頁的二級菜單)"
+						},
+						{
+							"key": "Store",
+							"label": "商店"
+						},
+						{
+							"key": "Movies",
+							"label": "電影(舊版為主頁的二級菜單)"
+						},
+						{
+							"key": "TV",
+							"label": "電視節目(舊版為主頁的二級菜單)"
+						},
+						{
+							"key": "Library",
+							"label": "資料庫"
+						},
+						{
+							"key": "Search",
+							"label": "搜索"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Configs",
+					"name": "[配置文件]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "“配置文件”要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.View[0]",
+					"name": "[內容詳情]首選語言",
+					"val": "SG",
+					"type": "selects",
+					"desc": "“內容詳情”(電影、電視節目、人物等詳情頁面)要更改為的首選語言",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "殘體中文(中國)"
+						},
+						{
+							"key": "HK",
+							"label": "繁體粵語(香港)"
+						},
+						{
+							"key": "TW",
+							"label": "繁體中文(台灣)"
+						},
+						{
+							"key": "SG",
+							"label": "殘體中文(新加坡)"
+						},
+						{
+							"key": "US",
+							"label": "英語(美國)"
+						},
+						{
+							"key": "JP",
+							"label": "日語(日本)"
+						},
+						{
+							"key": "AU",
+							"label": "英語(澳大利亞)"
+						},
+						{
+							"key": "GB",
+							"label": "英語(英國)"
+						},
+						{
+							"key": "KR",
+							"label": "韓語(韓國)"
+						},
+						{
+							"key": "CA",
+							"label": "英語(加拿大)"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.View[1]",
+					"name": "[內容詳情]第二語言",
+					"val": "TW",
+					"type": "selects",
+					"desc": "當首選語言不可用時，“內容詳情”(電影、電視節目、人物等詳情頁面)要更改為的第二語言",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "殘體中文(中國)"
+						},
+						{
+							"key": "HK",
+							"label": "繁體粵語(香港)"
+						},
+						{
+							"key": "TW",
+							"label": "繁體中文(台灣)"
+						},
+						{
+							"key": "SG",
+							"label": "殘體中文(新加坡)"
+						},
+						{
+							"key": "US",
+							"label": "英語(美國)"
+						},
+						{
+							"key": "JP",
+							"label": "日語(日本)"
+						},
+						{
+							"key": "AU",
+							"label": "英語(澳大利亞)"
+						},
+						{
+							"key": "GB",
+							"label": "英語(英國)"
+						},
+						{
+							"key": "KR",
+							"label": "韓語(韓國)"
+						},
+						{
+							"key": "CA",
+							"label": "英語(加拿大)"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.WatchNow",
+					"name": "[主頁(立即觀看)]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "“主頁”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Originals",
+					"name": "[Apple TV+/TV+(原創內容)]國家或地區代碼",
+					"val": "TW",
+					"type": "selects",
+					"desc": "“Apple TV+/TV+”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Channels",
+					"name": "[頻道 & Apps]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "“頻道 & Apps”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Sports",
+					"name": "[體育節目]國家或地區代碼",
+					"val": "US",
+					"type": "selects",
+					"desc": "“體育節目”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Kids",
+					"name": "[兒童]國家或地區代碼",
+					"val": "US",
+					"type": "selects",
+					"desc": "“兒童”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Store",
+					"name": "[商店]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "“商店”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Movies",
+					"name": "[電影]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "“電影”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.TV",
+					"name": "[電視節目]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "“電視節目”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Persons",
+					"name": "[人物]國家或地區代碼",
+					"val": "SG",
+					"type": "selects",
+					"desc": "“人物”欄目(導演、演員等)要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Search",
+					"name": "[搜索]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "“搜索”欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TV.Settings.CountryCode.Others",
+					"name": "[其他]國家或地區代碼",
+					"val": "AUTO",
+					"type": "selects",
+					"desc": "其他未指定的欄目要更改為的地區或國家版本",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "自動(與當前登陸賬號保持一致)"
+						},
+						{
+							"key": "CN",
+							"label": "中國"
+						},
+						{
+							"key": "HK",
+							"label": "香港"
+						},
+						{
+							"key": "TW",
+							"label": "台灣"
+						},
+						{
+							"key": "SG",
+							"label": "新加坡"
+						},
+						{
+							"key": "US",
+							"label": "美國"
+						},
+						{
+							"key": "JP",
+							"label": "日本"
+						},
+						{
+							"key": "AU",
+							"label": "澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "英國"
+						},
+						{
+							"key": "KR",
+							"label": "韓國"
+						},
+						{
+							"key": "CA",
+							"label": "加拿大"
+						}
+					]
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/9c/f7/8a/9cf78ad4-5443-acc0-3b36-f13d2ad7d64c/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp",
+				"https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/9c/f7/8a/9cf78ad4-5443-acc0-3b36-f13d2ad7d64c/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp"
+			]
+		},
+		{
+			"id": "iRingo.News",
+			"name": "📰 News",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/📰-News\">📰 News</a>的使用說明進行配置",
+				"影響功能範圍……等"
+			],
+			"keys": [
+				"@iRingo.News.Settings",
+				"@iRingo.News.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.News.Settings.Switch",
+					"name": "總功能開關",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否啓用此APP修改"
+				},
+				{
+					"id": "@iRingo.News.Settings.CountryCode",
+					"name": "國家或地區代碼",
+					"val": "US",
+					"type": "selects",
+					"desc": "不同國家或地區提供的內容或有差別",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "🇺🇳自動（跟隨地區檢測結果）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️中國"
+						},
+						{
+							"key": "HK",
+							"label": "🇭🇰香港"
+						},
+						{
+							"key": "TW",
+							"label": "🇹🇼台灣"
+						},
+						{
+							"key": "SG",
+							"label": "🇸🇬新加坡"
+						},
+						{
+							"key": "US",
+							"label": "🇺🇸美國"
+						},
+						{
+							"key": "JP",
+							"label": "🇯🇵日本"
+						},
+						{
+							"key": "AU",
+							"label": "🇦🇺澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "🇬🇧英國"
+						},
+						{
+							"key": "KR",
+							"label": "🇰🇷韓國"
+						},
+						{
+							"key": "CA",
+							"label": "🇨🇦加拿大"
+						},
+						{
+							"key": "IE",
+							"label": "🇮🇪愛爾蘭"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.News.Settings.NewsPlusUser",
+					"name": "[搜索]顯示News+內容",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否顯示News+搜索結果"
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple_News.png",
+				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_News.png"
+			]
+		},
+		{
+			"id": "iRingo.TestFlight",
+			"name": "✈ TestFlight",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/✈️-TestFlight\">✈️ TestFlight</a>的使用說明進行配置",
+				"影響功能範圍……等"
+			],
+			"keys": [
+				"@iRingo.TestFlight.Settings",
+				"@iRingo.TestFlight.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.TestFlight.Settings.Switch",
+					"name": "總功能開關",
+					"val": true,
+					"type": "boolean",
+					"desc": "是否啓用此APP修改"
+				},
+				{
+					"id": "@iRingo.TestFlight.Settings.CountryCode",
+					"name": "國家或地區代碼",
+					"val": "US",
+					"type": "selects",
+					"desc": "不同國家或地區提供的內容或有差別",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "🇺🇳自動（跟隨地區檢測結果）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️中國"
+						},
+						{
+							"key": "HK",
+							"label": "🇭🇰香港"
+						},
+						{
+							"key": "TW",
+							"label": "🇹🇼台灣"
+						},
+						{
+							"key": "SG",
+							"label": "🇸🇬新加坡"
+						},
+						{
+							"key": "US",
+							"label": "🇺🇸美國"
+						},
+						{
+							"key": "JP",
+							"label": "🇯🇵日本"
+						},
+						{
+							"key": "AU",
+							"label": "🇦🇺澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "🇬🇧英國"
+						},
+						{
+							"key": "KR",
+							"label": "🇰🇷韓國"
+						},
+						{
+							"key": "CA",
+							"label": "🇨🇦加拿大"
+						},
+						{
+							"key": "IE",
+							"label": "🇮🇪愛爾蘭"
+						}
+					]
+				},
+				{
+					"id": "@iRingo.TestFlight.Settings.MultiAccount",
+					"name": "啓用多賬號支持",
+					"val": false,
+					"type": "boolean",
+					"desc": "是否啓用多賬號支持，會自動保存保存更新當前賬號信息"
+				},
+				{
+					"id": "@iRingo.TestFlight.Settings.Universal",
+					"name": "啓用通用應用支持(測試)",
+					"val": false,
+					"type": "boolean",
+					"desc": "是否啓用通用應用支持，解除TF中app的iOS/iPadOS/macOS(AppleSilicon)平台限制"
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/TestFlight_2.png",
+				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TestFlight_2.png"
+			]
+		},
+		{
+			"id": "iRingo.Watch",
+			"name": "⌚️ WATCH",
+			"descs_html": [
+				"請參照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/⌚️-WATCH\">⌚️ WATCH</a>的使用說明進行配置",
+				"影響功能範圍WATCH上的“指南針”、“地圖”、“News”等"
+			],
+			"keys": [
+				"@iRingo.Watch.Settings",
+				"@iRingo.Watch.Caches"
+			],
+			"settings": [
+				{
+					"id": "@iRingo.Maps.Settings.GeoManifest.Dynamic.Config.CountryCode.watchOS",
+					"name": "[動態配置]地理服務清單的國家或地區代碼",
+					"val": "US",
+					"type": "selects",
+					"desc": "要更改為的地區或國家，此選項影響“地圖”整體配置內容，包括以下的地圖功能與服務",
+					"items": [
+						{
+							"key": "AUTO",
+							"label": "🇺🇳自動（跟隨地區檢測結果）"
+						},
+						{
+							"key": "CN",
+							"label": "🏳️中國"
+						},
+						{
+							"key": "HK",
+							"label": "🇭🇰香港"
+						},
+						{
+							"key": "TW",
+							"label": "🇹🇼台灣"
+						},
+						{
+							"key": "SG",
+							"label": "🇸🇬新加坡"
+						},
+						{
+							"key": "US",
+							"label": "🇺🇸美國"
+						},
+						{
+							"key": "JP",
+							"label": "🇯🇵日本"
+						},
+						{
+							"key": "AU",
+							"label": "🇦🇺澳大利亞"
+						},
+						{
+							"key": "GB",
+							"label": "🇬🇧英國"
+						},
+						{
+							"key": "KR",
+							"label": "🇰🇷韓國"
+						},
+						{
+							"key": "CA",
+							"label": "🇨🇦加拿大"
+						},
+						{
+							"key": "IE",
+							"label": "🇮🇪愛爾蘭"
+						}
+					]
+				}
+			],
+			"author": "習近平小熊維尼",
+			"repo": "https://www.president.gov.tw",
+			"icons": [
+				"https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/4c/2f/15/4c2f15f5-3913-b073-2215-34f030e458f2/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp",
+				"https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/4c/2f/15/4c2f15f5-3913-b073-2215-34f030e458f2/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp"
+			]
+		}
+	]
+}
